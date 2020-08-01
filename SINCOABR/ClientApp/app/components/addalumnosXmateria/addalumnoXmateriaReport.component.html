@@ -1,0 +1,50 @@
+﻿<h1>{{titulo}}</h1>
+<h3>Materias de alumno</h3>
+<hr />
+<form [formGroup]="alumnoXmateriaFormReport" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+
+
+    <div class="form-group row">
+        <label class=" control-label col-md-12">Calificacion</label>
+        <div class="col-md-4">
+            <input class="form-control" type="text" formControlName="calificacion">
+        </div>
+        <span class="text-danger" *ngIf="calificacion.invalid && formDir.submitted">
+            Calificacion is required.
+        </span>
+    </div>
+
+    <!--<div class="form-group row">
+        <label class="control-label col-md-12" for="Periodo">Periodo</label>
+        <div class="col-md-4">
+            <select class="form-control" data-val="true" formControlName="idperiodo">
+                <option value="">-- Seleccionar Periodo --</option>
+                <option value="1">Primer Semestre</option>
+                <option value="2">Segundo Semestre</option>
+            </select>
+        </div>
+        <span class="text-danger" *ngIf="idperiodo.invalid && formDir.submitted">
+            Periodo is required
+        </span>
+    </div>-->
+
+    <!--<div class="form-group row">
+        <label class="control-label col-md-12" for="Materia">Materia</label>
+        <div class="col-md-4">
+            <select class="form-control" data-val="true" formControlName="idmateria">
+                <option value="">--Seleccionar Materia--</option>
+                <option *ngFor="let materia of materiaList"
+                        value={{materia.id}}>
+                    {{materia.materia1}}
+                </option>
+            </select>
+        </div>
+        <span class="text-danger" *ngIf="idmateria.invalid && formDir.submitted">
+            Materia is required
+        </span>
+    </div>-->
+    <div class="form-group">
+        <button type="submit" class="btn btn-default">Save</button>
+        <button class="btn" (click)="cancel()">Cancel</button>
+    </div>
+</form>

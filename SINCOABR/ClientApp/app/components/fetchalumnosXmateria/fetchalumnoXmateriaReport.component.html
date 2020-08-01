@@ -1,0 +1,40 @@
+﻿<h1>Información Materias de Alumnos</h1>
+
+<p>Materias de alumnos en la academia.</p>
+
+<p *ngIf="!alumnoXmateriaList"><em>Loading...</em></p>
+
+<!--<p>
+    <a [routerLink]="['/register-alumnoXmateria']">Crear Nuevo</a>
+</p>-->
+
+<table class='table' *ngIf="alumnoXmateriaList">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Alumno</th>
+        <th>Apellido</th>
+        <th>Materia</th>
+        <th>Calificaciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let alumnoXmateria of alumnoXmateriaList">
+        <td>{{ alumnoXmateria.id }}</td>
+        <td>{{ alumnoXmateria.nombre }}</td>
+        <td>{{ alumnoXmateria.apellido }}</td>
+        <td>{{ alumnoXmateria.materia1 }}</td>
+        <td>{{ alumnoXmateria.calificacion }}</td>
+        <td>
+        <td>
+            <!--<a [routerLink]="['/alumnoXmateria/edit/', alumnoXmateria.id]" class="btn btn-warning" title="Edit">
+                <i class="glyphicon glyphicon-pencil"></i>
+            </a> |-->
+            <!--<a [routerLink]="" (click)="delete(alumnoXmateria.id)">Delete</a>-->
+            <a [routerLink]="" (click)="delete(alumnoXmateria.id)" class="btn btn-danger" title="Delete">
+                <i class="glyphicon glyphicon-minus"></i>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>

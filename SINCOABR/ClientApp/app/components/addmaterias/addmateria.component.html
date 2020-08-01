@@ -1,0 +1,20 @@
+﻿<h1>{{titulo}}</h1>
+<h3>Materia</h3>
+<hr />
+<form [formGroup]="materiaForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+
+    <div class="form-group row">
+        <label class=" control-label col-md-12">Materia</label>
+        <div class="col-md-4">
+            <input class="form-control" type="text" formControlName="materia1">
+        </div>
+        <span class="text-danger" *ngIf="materia1.invalid && formDir.submitted">
+            Materia es requerido.
+        </span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-default">Save</button>
+        <button class="btn" (click)="cancel()">Cancel</button>
+    </div>
+</form>

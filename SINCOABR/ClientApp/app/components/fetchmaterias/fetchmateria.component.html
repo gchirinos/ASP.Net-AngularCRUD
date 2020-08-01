@@ -1,0 +1,35 @@
+﻿<h1>Información de Materias</h1>
+
+<p>Materias de la academia.</p>
+
+<p *ngIf="!materiaList"><em>Loading...</em></p>
+
+<p>
+    <a [routerLink]="['/register-materia']">Crear Nuevo</a>
+</p>
+
+<table class='table' *ngIf="materiaList">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Materia</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let materia of materiaList">
+            <td>{{ materia.id }}</td>
+            <td>{{ materia.materia1 }}</td>
+            <td>
+            <td>
+                <!--<a [routerLink]="['/materia/edit/', materia.id]">Edit</a>-->
+                <a [routerLink]="['/materia/edit/', materia.id]" class="btn btn-info" title="Edit">
+                    <i class="glyphicon glyphicon-eye-open"></i>
+                </a> |
+                <!--<a [routerLink]="" (click)="delete(materia.id)">Delete</a>-->
+                <a [routerLink]="" (click)="delete(materia.id)" class="btn btn-danger" title="Delete">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
